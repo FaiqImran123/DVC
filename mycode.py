@@ -7,6 +7,8 @@ if not os.path.exists(folder_name):
     os.makedirs(folder_name)
 
 # Step 2: Create sample DataFrame
+import pandas as pd
+
 data = {
     "id": [1, 2, 3, 4],
     "name": ["Ali", "Sara", "Ahmed", "Ayesha"],
@@ -14,6 +16,10 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+# Add new row
+df.loc[len(df)] = [5, "Hamza", 88]
+
 
 # Step 3: Save to CSV inside data folder
 file_path = os.path.join(folder_name, "sample_data.csv")
